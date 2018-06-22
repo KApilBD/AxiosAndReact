@@ -18,7 +18,7 @@ class NewPost extends Component {
         };
         axios.post('https://jsonplaceholder.typicode.com/posts',post)
         .then((res)=>{
-            console.log(res);
+            // console.log(res);
         })
     }
 
