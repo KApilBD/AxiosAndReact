@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+// import { Link }  from 'react-router-dom';
 
 import axios from '../../../axios';
 import Post from '../../../components/Post/Post';
-import './Posts.css' 
+import './Posts.css';
 
 class Posts extends Component {
     state = {
@@ -29,18 +30,22 @@ class Posts extends Component {
     }
 
     postSelectedHandler = (id) => {
-        this.setState({selectedPostId: id}); 
-
+        this.props.history.push({pathname: '/' + id})
         // (prevstate,id)=>
     }
 
     render(){
 
         const posts= this.state.posts.map((post)=> {
-            return <Post key={post.id} 
-                         clicked={()=>this.postSelectedHandler(post.id)} 
-                         author={post.author} 
-                         title={post.title}/>
+            return (
+                    // <Link to= {'/'+post.id} >
+                        <Post 
+                            key={post.id}
+                            clicked={()=>this.postSelectedHandler(post.id)} 
+                            author={post.author} 
+                            title={post.title}/>
+                    // </Link>
+                )
         })
     
         // const post= this.state.posts.map((record)=>{
