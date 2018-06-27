@@ -9,6 +9,10 @@ import NewPost from './NewPost/NewPost';
 // import FullPost from './FullPost/FullPost';
 
 class Blog extends Component {
+    state={
+        auth: true,
+    }
+
     render () {
         // const posts= this.state.posts.map((post)=> {
         //     return <Post key={post.id} 
@@ -46,9 +50,10 @@ class Blog extends Component {
                 {/* <Route path="/" exact render={()=><h1> Home </h1>} /> */}
                 
                 <Switch> 
-                    <Route path="/new-post"  component={NewPost} />
+                    {this.state.auth ? <Route path="/new-post"  component={NewPost}  /> : null}
                     <Route path="/posts"  component={Posts} />
-                    <Redirect from="/" to= "/posts" />
+                    <Route render={()=> <h1>Not Found</h1>} />
+                    {/* <Redirect from="/" to= "/posts" /> */}
                 </Switch>
             </div>
         );
