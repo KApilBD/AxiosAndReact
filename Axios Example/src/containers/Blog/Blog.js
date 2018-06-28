@@ -50,7 +50,7 @@ class Blog extends Component {
                                 // search: '?quick-submit=true',
                             }}>New Post</NavLink></li>
                         </ul>
-                    </nav>
+                    </nav> 
                 </header>
                 {/* <Route path="/" exact render={()=><h1> Home </h1>} /> */}
                 
